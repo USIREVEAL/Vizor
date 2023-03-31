@@ -1,0 +1,43 @@
+image: hpiswa/smalltalkci
+
+variables:
+  COVERAGE_DIR: /builds/research/vizor/coverage
+
+stages:
+  - test
+  - coverage
+
+Pharo64 8.0:
+  stage: test
+  script:
+    - smalltalkci -s "Pharo64-8.0"
+    - ls $COVERAGE_DIR
+  only:
+    changes:
+      - src/**/*
+  artifacts:
+    paths:
+      - $COVERAGE_DIR
+    expire_in: 1 day
+
+extract coverage:
+  stage: coverage
+  image: python:3.9-slim-buster
+  script:
+    - pip install lcov-cobertura-fix==1.6.1a2 pycobertura
+    - lcov_cobertura $COVERAGE_DIR/lcov.info --output $COVERAGE_DIR/coverage.xml
+    - ls $COVERAGE_DIR
+    - pycobertura show $COVERAGE_DIR/coverage.xml
+  dependencies: 
+    - Pharo64 8.0
+  only:
+    changes:
+      - src/**/*
+  artifacts:
+    reports:
+      coverage_report:
+        coverage_format: cobertura
+        path: $COVERAGE_DIR/coverage.xml
+    paths:
+      - $COVERAGE_DIR
+    expire_in: 1 week

@@ -1,0 +1,14 @@
+SmalltalkCISpec {
+  #loading : [
+    SCIMetacelloLoadSpec {
+      #baseline : 'Vizor',
+      #directory : 'src'
+    }
+  ],  
+  #testing : {
+    #coverage : {
+      #packages : [ 'Vizor' ],
+      #format : #lcov
+    }
+  }
+}
