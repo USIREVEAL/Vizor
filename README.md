@@ -21,7 +21,7 @@ To add Vizor to a Pharo image you can run the following command in a playground.
 ```st
 Metacello new
     baseline: 'Vizor';
-    repository: 'github://USIREVEAL:vizor';
+    repository: 'github://USIREVEAL/vizor:main';
     load.
 ```
 ### Vizor as a library
@@ -34,7 +34,7 @@ vizorVersion := 'main'.
 spec
     baseline: 'Vizor'
     with: [
-        spec repository: 'github://USIREVEAL:vizor:' , vizorVersion
+        spec repository: 'github://USIREVEAL/vizor:' , vizorVersion
     ]
 ```
 
@@ -42,10 +42,10 @@ spec
 
 See examples in `Vizor-GUI - Examples`.
 
-
-<img style="margin: 0.5rem auto; height: 200px;" src="./images/VizorClassHierarchySimplified.png" />
-<img style="margin: 0.5rem auto; height: 200px;" src="./images/VizorSocialExample.png" />
-<!-- <img style="margin: 0.5rem auto; width: 45%;" src="./images/VizorClassHierarchyView.png" /> -->
+<div>
+    <img height="250px" src="./images/VizorClassHierarchySimplified.png" />
+    <img height="250px" src="./images/VizorSocialExample.png" />
+</div>
 
 ## Publications
 
