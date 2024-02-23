@@ -32,7 +32,9 @@ VZComponent >> monitor [
 { #category : #showing }
 VZComponent >> openWithSpec [
 	"For compatibility with older version of Roassal"
-	self open.
+	((((Smalltalk version splitOn: $.) at: 1) withoutPrefix: 'Pharo') asInteger >= 11)
+		ifTrue: [ self open. ]
+		ifFalse: [ super openWithSpec. ].
 ]
 
 { #category : #dependencies }
