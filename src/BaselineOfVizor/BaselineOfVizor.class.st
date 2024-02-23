@@ -8,9 +8,11 @@ Class {
 BaselineOfVizor >> baseline: spec [
 	<baseline>
 	spec for: #common do: [
-		"Dependencies"
-		self roassal3: spec.
-		self roassal3Exporters: spec.
+		spec for: #'pharo8.x' do: [
+			"Pharo 8 Dependencies (Roassal)"
+			self roassal3: spec.
+			self roassal3Exporters: spec.
+		].
 
 		"Packages"
 		spec
