@@ -29,6 +29,12 @@ VZComponent >> monitor [
 	^ self mainWindow monitor.
 ]
 
+{ #category : #showing }
+VZComponent >> openWithSpec [
+	"For compatibility with older version of Roassal"
+	self open.
+]
+
 { #category : #dependencies }
 VZComponent >> release [
 	self class instVarNames do: [ :name | self instVarNamed: name put: nil ].
