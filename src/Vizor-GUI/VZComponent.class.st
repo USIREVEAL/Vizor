@@ -29,6 +29,14 @@ VZComponent >> monitor [
 	^ self mainWindow monitor.
 ]
 
+{ #category : #showing }
+VZComponent >> openWithSpec [
+	"For compatibility with older version of Roassal"
+	((((Smalltalk version splitOn: $.) at: 1) withoutPrefix: 'Pharo') asInteger >= 11)
+		ifTrue: [ self open. ]
+		ifFalse: [ super openWithSpec. ].
+]
+
 { #category : #dependencies }
 VZComponent >> release [
 	self class instVarNames do: [ :name | self instVarNamed: name put: nil ].

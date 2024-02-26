@@ -10,7 +10,7 @@ With Vizor you can:
  - leverage predefined view specifications or create custom ones to visualize a subset of the nodes and edges
  - ...
 
-Vizor is developed in [Pharo](https://pharo.org), tested with Pharo 8, and released under MIT License.
+Vizor is developed in [Pharo](https://pharo.org), tested and usable with Pharo 8 and 11, and released under MIT License.
 
 ## Installation and Usage
 

@@ -39,13 +39,13 @@ VZWorldMenu class >> menu01ExamplesOn: aBuilder [
 ]
 
 { #category : #menu }
-VZWorldMenu class >> menu03GitlabOn: aBuilder [
+VZWorldMenu class >> menu03GithubOn: aBuilder [
 	<worldMenu>
 	(aBuilder item: #VizorGit)
 		parent: #VZMonitor;
 		order: 3;
-		label: 'GitLab';
-		help: 'Open Vizor GitLab page';
-		icon: (self iconNamed: 'gitlab');
-		action: [ WebBrowser openOn: 'https://gitlab.reveal.si.usi.ch/research/vizor/' ].
+		label: 'GitHub';
+		help: 'Open Vizor GitHub page';
+		icon: (self iconNamed: 'github');
+		action: [ WebBrowser openOn: 'https://github.com/USIREVEAL/Vizor' ].
 ]

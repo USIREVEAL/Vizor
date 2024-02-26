@@ -157,7 +157,9 @@ VZGlyph >> mapMetricsToProperties [
 
 { #category : #interacting }
 VZGlyph >> openContextMenu [
-	self contextMenu openWithSpecAt: ActiveHand position
+((((Smalltalk version splitOn: $.) at: 1) withoutPrefix: 'Pharo') asInteger >= 11)
+	ifTrue: [ self contextMenu openWithSpecAtPointer ]
+	ifFalse: [ self contextMenu openWithSpecAt: ActiveHand position ].
 ]
 
 { #category : #'private - utility' }
