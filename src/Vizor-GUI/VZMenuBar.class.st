@@ -116,15 +116,25 @@ VZMenuBar >> inspectGraph [
 { #category : #'menu - layouts' }
 VZMenuBar >> layoutsMenu [
 	| layouts aMenu |
-	layouts := { 'Circle' . 'Cluster' . 'Flow' . 'Horizontal Flow' . 'Force' . 'Grid' . 'Tree' . 'None' }.
+	layouts := { 'Circle' . 'Cluster Tree' . 'Flow' . 'Force' . 'Grid' . 'Horizontal Flow' . 'Tree' }.
+	layouts sort.
 	aMenu := self newMenu.
-	layouts do: [ :each |
-		| aSymbol |
-		aSymbol := (each asLowercase copyReplaceAll: ' ' with: '') asSymbol.
-			aMenu
-				addItem: [ :item |
-					item name: each;
-					action: [ self monitor announce: (VZLayoutChangedAnnouncement new layout: aSymbol) ] ] ].
+	aMenu addGroup: [ :group |
+		layouts do: [ :each |
+			| aSymbol |
+			aSymbol := (each asLowercase copyReplaceAll: ' ' with: '') asSymbol.
+			group addItem: [ :item |
+				item name: each;
+				action: [ self monitor announce: (VZLayoutChangedAnnouncement new layout: aSymbol) ]
+			]
+		]
+	].
+	aMenu addGroup: [ :group |
+		group addItem: [ :item |
+			item name: 'None';
+			action: [ self monitor announce: (VZLayoutChangedAnnouncement new layout: #none) ]
+		]
+	].
 	^ aMenu
 
 ]

@@ -77,7 +77,7 @@ VZView class >> layoutClassDict [
 		#force -> RSForceBasedLayout .
 		#flow -> RSFlowLayout .
 		#horizontalflow -> RSHorizontalFlowLayout .
-		#cluster -> RSClusterLayout .
+		#clustertree -> RSClusterTreeLayout .
 		#none -> RSNoLayout .
 	}.
 	

@@ -13,7 +13,7 @@ Class {
 VZViewSpecExample class >> defaultViewSpec [
 	^ VZViewSpec new
 		name: 'Circular view';
-		layoutClass: RSClusterLayout;
+		layoutClass: RSClusterTreeLayout;
 		glyphMappings:
 			{(VZRootNode -> VZCircleNodeGlyph).
 			(VZLeafNode -> VZLabelNodeGlyph)}
