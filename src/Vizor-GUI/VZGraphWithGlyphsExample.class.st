@@ -39,6 +39,6 @@ VZGraphWithGlyphsExample class >> viewSpecs [
 		glyphMappings: {
 			VZNode -> VZCircleNodeGlyph .
 			VZEdge -> VZDashedEdgeGlyph . };
-		layoutClass: RSClusterLayout .
+		layoutClass: RSClusterTreeLayout .
 	} asOrderedCollection.
 ]
