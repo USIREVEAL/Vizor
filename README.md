@@ -10,7 +10,7 @@ With Vizor you can:
  - leverage predefined view specifications or create custom ones to visualize a subset of the nodes and edges
  - ...
 
-Vizor is developed in [Pharo](https://pharo.org), tested and usable with Pharo 8 and 11, and released under MIT License.
+Vizor is developed in [Pharo](https://pharo.org), tested and usable with Pharo 8 ([see Pharo 8 Compatibility](#Pharo-8-Compatibility)) and 11, and released under MIT License.
 
 ## Installation and Usage
 
@@ -46,6 +46,18 @@ See examples in `Vizor-GUI - Examples`.
     <img height="250px" src="./images/VizorClassHierarchySimplified.png" />
     <img height="250px" src="./images/VizorSocialExample.png" />
 </div>
+
+### Pharo 8 Compatibility
+
+Version 1.1.0 is the latest version compatible with Pharo 8. Development for recent Pharo versions resumed and backward compatibility of new features is not guaranteed nor tested.
+
+To import that specific version of Vizor:
+```st
+Metacello new
+    baseline: 'Vizor';
+    repository: 'github://USIREVEAL/vizor:v1.1.0';
+    load.
+```
 
 ## Publications
 
